@@ -1,8 +1,10 @@
-<js>
+
 angular.module('News', [])
   .controller('MainCtrl', [
   '$scope',
-  function($scope){
+  'postFactory',
+  function($scope, postFactory){
+    $scope.posts = postFactory.posts;
     $scope.incrementUpvotes = function(post) {
       post.upvotes += 1;
     };
@@ -21,6 +23,10 @@ angular.module('News', [])
   }
 ]);
 
- 
-  
-  </js>
+  angular.module('News', [])
+  .factory('postFactory', [function(){
+    var o = {
+      posts: []
+    };
+    return o;
+  }])
