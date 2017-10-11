@@ -1,5 +1,4 @@
-
-angular.module('News', [])
+angular.module('News', ['ui.router'])
   .controller('MainCtrl', [
   '$scope',
   'postFactory',
@@ -23,10 +22,24 @@ angular.module('News', [])
   }
 ]);
 
+
   angular.module('News', [])
   .factory('postFactory', [function(){
     var o = {
       posts: []
     };
     return o;
+  }]).config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+      $stateProvider
+        .state('home', {
+          url: '/home',
+          templateUrl: '/home.html',
+          controller: 'MainCtrl'
+        });
+      $urlRouterProvider.otherwise('home');
   }])
+
+
