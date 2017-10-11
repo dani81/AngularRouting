@@ -22,11 +22,5 @@ angular.module('News', [])
 ]);
 
  
-  angular.module('News', [])
-  .factory('postFactory', [function(){
-    var o = {
-      posts: []
-    };
-    return o;
-  }])
+  
   </js>
