@@ -27,6 +27,15 @@ angular.module('News', ['ui.router'])
     'postFactory',
     function($scope, postFactory){
       $scope.posts = postFactory.posts;
+      $scope.addPost = function(){
+        if($scope.formContent === '') { return; }
+        $scope.posts.push({
+          title: $scope.formContent,
+          upvotes: 0,
+          comments: []
+        });
+        $scope.title = '';
+      };
       $scope.incrementUpvotes = function(post) {
       post.upvotes += 1;
     };
