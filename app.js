@@ -58,7 +58,12 @@ angular.module('News', ['ui.router'])
     '$stateParams',
     'postFactory', 
     function($scope, $stateParams, postFactory){
+      console.log($scope);
+      console.log($stateParams);
+      console.log(postFactory);
+      
       $scope.post = postFactory.posts[$stateParams.id];
+      
       $scope.addComment = function(){
         if($scope.body === '') { return; }
         $scope.post.comments.push({
