@@ -21,10 +21,12 @@
         <div class="page-header">
           <h1>News</h1>
         </div>
-        <!-- rest of existing code for the page -->
-      </script>
 
-      <form ng-submit="addPost()" style = "margin-top30px;">
+      <form ng-submit="addPost()" 
+        style = "margin-top30px;">
+        <h3>Add a new post</h3>
+
+        
         <input type="text" ng-model="formContent"></input>
       <button type="submit">Post</button>
       </form>
@@ -36,6 +38,7 @@
       </div>
     </div>
     </div>
+  </script>
 
   <script type="text/ng-template" id="/posts.html">
     <div class="page-header">
