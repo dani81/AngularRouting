@@ -1,4 +1,10 @@
 angular.module('News', [])
+  .factory('postFactory', [function(){
+    var o = {
+      posts: []
+    };
+    return o;
+  }])
   .controller('MainCtrl', [
   '$scope',
   function($scope){
