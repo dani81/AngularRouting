@@ -18,7 +18,8 @@ angular.module('News', ['ui.router'])
   }])
   .factory('postFactory', [function(){
     var o = {
-      posts: []
+      posts: [
+      ]
     };
     return o;
   }])
