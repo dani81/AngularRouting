@@ -35,18 +35,12 @@ angular.module('News', ['ui.router'])
           upvotes: 0,
           comments: []
         });
+        $scope.posts = postFactory.posts;
         $scope.title = '';
       };
       $scope.incrementUpvotes = function(post) {
       post.upvotes += 1;
     };
-    $scope.posts = [
-      {title:'Post 1', upvotes:5},
-      {title:'Post 2', upvotes:6},
-      {title:'Post 3', upvotes:1},
-      {title:'Post 4', upvotes:4},
-      {title:'Post 5', upvotes:3}
-    ];
   }
 ])
   .controller('PostCtrl', [
